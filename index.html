@@ -243,6 +243,47 @@
         display: none;
       }
 
+      .context-section {
+        margin-bottom: 30px;
+        animation: fadeInUp 0.5s ease;
+      }
+
+      .context-label {
+        display: block;
+        color: #495057;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        text-align: left;
+      }
+
+      .context-input {
+        width: 100%;
+        padding: 15px 20px;
+        border: 2px solid #e9ecef;
+        border-radius: 15px;
+        background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+        color: #495057;
+        font-size: 1rem;
+        font-family: inherit;
+        line-height: 1.5;
+        resize: vertical;
+        min-height: 100px;
+        transition: all 0.3s ease;
+        outline: none;
+      }
+
+      .context-input:focus {
+        border-color: #d4af37;
+        background: linear-gradient(145deg, #fdf7e6, #f5e6cc);
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+      }
+
+      .context-input::placeholder {
+        color: #6c757d;
+        opacity: 0.8;
+      }
+
       /* Mobile Responsiveness */
       @media (max-width: 768px) {
         .container {
@@ -292,6 +333,15 @@
         .upload-text {
           font-size: 1rem;
         }
+
+        .context-input {
+          padding: 12px 15px;
+          font-size: 0.9rem;
+        }
+
+        .context-label {
+          font-size: 1rem;
+        }
       }
     </style>
   </head>
@@ -304,6 +354,18 @@
         <input type="file" id="fileInput" accept="image/*" />
         <div class="upload-icon">📸</div>
         <p class="upload-text">Click to upload an image</p>
+      </div>
+
+      <div class="context-section">
+        <label for="contextInput" class="context-label"
+          >Add Context (Optional)</label
+        >
+        <textarea
+          id="contextInput"
+          class="context-input"
+          placeholder="Provide additional context about this heritage object."
+          rows="4"
+        ></textarea>
       </div>
 
       <div id="imagePreview" class="preview-section hidden">
@@ -336,6 +398,7 @@
       const analysisText = document.getElementById("analysisText");
       const errorDiv = document.getElementById("error");
       const newAnalysisBtn = document.getElementById("newAnalysisBtn");
+      const contextInput = document.getElementById("contextInput");
 
       // Supabase Edge Function endpoint
       const EDGE_FUNCTION_URL =
@@ -393,6 +456,7 @@
             },
             body: JSON.stringify({
               imageBase64: currentImageBase64,
+              context: contextInput.value.trim(),
             }),
           });
 
@@ -421,6 +485,7 @@
       function resetInterface() {
         currentImageBase64 = null;
         fileInput.value = "";
+        contextInput.value = "";
         imagePreview.classList.add("hidden");
         results.classList.add("hidden");
         loading.style.display = "none";
