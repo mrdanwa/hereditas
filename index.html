@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hereditas - Heritage Object Analyzer (Server)</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #d4af37 0%, #8b4513 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .container {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        max-width: 650px;
+        width: 100%;
+        transition: all 0.3s ease;
+      }
+
+      .container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+      }
+
+      h1 {
+        text-align: center;
+        background: linear-gradient(135deg, #d4af37, #8b4513);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        letter-spacing: -1px;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #6c757d;
+        margin-bottom: 40px;
+        font-size: 1.1rem;
+        font-weight: 400;
+      }
+
+      .upload-area {
+        border: 3px dashed #e9ecef;
+        background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+        padding: 50px 30px;
+        text-align: center;
+        margin-bottom: 30px;
+        cursor: pointer;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .upload-area::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(212, 175, 55, 0.1),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .upload-area:hover {
+        border-color: #d4af37;
+        background: linear-gradient(145deg, #fdf7e6, #f5e6cc);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(212, 175, 55, 0.1);
+      }
+
+      .upload-area:hover::before {
+        left: 100%;
+      }
+
+      .upload-icon {
+        font-size: 3rem;
+        margin-bottom: 15px;
+        color: #d4af37;
+      }
+
+      .upload-text {
+        color: #495057;
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+
+      #fileInput {
+        display: none;
+      }
+
+      .preview-section {
+        text-align: center;
+        animation: fadeInUp 0.5s ease;
+      }
+
+      .preview-img {
+        max-width: 100%;
+        max-height: 350px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
+        transition: transform 0.3s ease;
+      }
+
+      .preview-img:hover {
+        transform: scale(1.02);
+      }
+
+      button {
+        background: linear-gradient(135deg, #d4af37, #8b4513);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 50px;
+        cursor: pointer;
+        display: block;
+        margin: 25px auto;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+      }
+
+      button:active {
+        transform: translateY(0);
+      }
+
+      button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
+      }
+
+      .loading {
+        text-align: center;
+        display: none;
+        padding: 40px 0;
+      }
+
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #d4af37;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 20px;
+      }
+
+      .loading-text {
+        color: #d4af37;
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .results {
+        background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+        padding: 30px;
+        border-radius: 15px;
+        margin-top: 30px;
+        border-left: 5px solid #d4af37;
+        animation: fadeInUp 0.5s ease;
+      }
+
+      .results h3 {
+        color: #495057;
+        margin-bottom: 20px;
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+
+      .analysis-content {
+        color: #6c757d;
+        line-height: 1.6;
+        font-size: 1rem;
+      }
+
+      .error {
+        background: linear-gradient(145deg, #f8d7da, #f5c6cb);
+        color: #721c24;
+        padding: 20px;
+        border-radius: 15px;
+        margin: 25px 0;
+        border-left: 5px solid #dc3545;
+        font-weight: 500;
+        animation: fadeInUp 0.5s ease;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      /* Mobile Responsiveness */
+      @media (max-width: 768px) {
+        .container {
+          padding: 30px 20px;
+          margin: 10px;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        .upload-area {
+          padding: 40px 20px;
+        }
+
+        button {
+          padding: 12px 25px;
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        body {
+          padding: 10px;
+        }
+
+        .container {
+          padding: 25px 15px;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        .subtitle {
+          font-size: 1rem;
+        }
+
+        .upload-area {
+          padding: 30px 15px;
+        }
+
+        .upload-icon {
+          font-size: 2.5rem;
+        }
+
+        .upload-text {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🏛️ Hereditas</h1>
+      <p class="subtitle">
+        AI-Powered Heritage Object Analysis (Server Version)
+      </p>
+
+      <div class="upload-area" id="uploadArea">
+        <input type="file" id="fileInput" accept="image/*" />
+        <div class="upload-icon">📸</div>
+        <p class="upload-text">Click to upload an image</p>
+      </div>
+
+      <div id="imagePreview" class="preview-section hidden">
+        <img id="previewImg" class="preview-img" alt="Preview" />
+        <button id="analyzeBtn">Analyze Heritage Object</button>
+      </div>
+
+      <div id="loading" class="loading">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Analyzing your heritage object...</p>
+      </div>
+
+      <div id="error" class="error hidden"></div>
+
+      <div id="results" class="results hidden">
+        <h3>Analysis Result</h3>
+        <div id="analysisText" class="analysis-content"></div>
+        <button id="newAnalysisBtn">Analyze Another Object</button>
+      </div>
+    </div>
+
+    <script>
+      const fileInput = document.getElementById("fileInput");
+      const uploadArea = document.getElementById("uploadArea");
+      const imagePreview = document.getElementById("imagePreview");
+      const previewImg = document.getElementById("previewImg");
+      const analyzeBtn = document.getElementById("analyzeBtn");
+      const loading = document.getElementById("loading");
+      const results = document.getElementById("results");
+      const analysisText = document.getElementById("analysisText");
+      const errorDiv = document.getElementById("error");
+      const newAnalysisBtn = document.getElementById("newAnalysisBtn");
+
+      // Supabase Edge Function endpoint
+      const EDGE_FUNCTION_URL =
+        "https://zumznltgebfpfukjxttt.supabase.co/functions/v1/analyze";
+      const SUPABASE_ANON_KEY =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp1bXpubHRnZWJmcGZ1a2p4dHR0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyMDY1OTQsImV4cCI6MjA3Mzc4MjU5NH0.PpWEQRnkzWqHo1ywWD7WqxvCNs4aDovDhzE_C54hDiQ";
+
+      let currentImageBase64 = null;
+
+      fileInput.addEventListener("change", (e) => {
+        if (e.target.files.length > 0) {
+          handleFileSelect(e.target.files[0]);
+        }
+      });
+
+      function handleFileSelect(file) {
+        if (!file.type.startsWith("image/")) {
+          showError("Please select a valid image file.");
+          return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          currentImageBase64 = e.target.result;
+          previewImg.src = currentImageBase64;
+          imagePreview.classList.remove("hidden");
+          results.classList.add("hidden");
+          errorDiv.classList.add("hidden");
+        };
+        reader.readAsDataURL(file);
+      }
+
+      analyzeBtn.addEventListener("click", analyzeImage);
+
+      newAnalysisBtn.addEventListener("click", () => {
+        resetInterface();
+      });
+
+      async function analyzeImage() {
+        if (!currentImageBase64) {
+          showError("Please select an image first.");
+          return;
+        }
+
+        loading.style.display = "block";
+        errorDiv.classList.add("hidden");
+        analyzeBtn.disabled = true;
+
+        try {
+          const response = await fetch(EDGE_FUNCTION_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+            },
+            body: JSON.stringify({
+              imageBase64: currentImageBase64,
+            }),
+          });
+
+          const data = await response.json();
+
+          if (!data.success) {
+            throw new Error(data.error || "Analysis failed");
+          }
+
+          analysisText.innerHTML = data.analysis.replace(/\n/g, "<br>");
+          results.classList.remove("hidden");
+          imagePreview.classList.add("hidden");
+        } catch (error) {
+          showError(`Analysis failed: ${error.message}`);
+        } finally {
+          loading.style.display = "none";
+          analyzeBtn.disabled = false;
+        }
+      }
+
+      function showError(message) {
+        errorDiv.textContent = message;
+        errorDiv.classList.remove("hidden");
+      }
+
+      function resetInterface() {
+        currentImageBase64 = null;
+        fileInput.value = "";
+        imagePreview.classList.add("hidden");
+        results.classList.add("hidden");
+        loading.style.display = "none";
+        errorDiv.classList.add("hidden");
+      }
+
+      uploadArea.addEventListener("click", () => {
+        fileInput.click();
+      });
+    </script>
+  </body>
+</html>
