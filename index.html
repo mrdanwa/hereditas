@@ -471,10 +471,10 @@
 
           // Check if data.analysis is already an object or needs parsing
           if (typeof data.analysis === "object" && data.analysis !== null) {
-            // Already parsed object
+            // Already parsed object from backend
             analysisData = data.analysis;
           } else if (typeof data.analysis === "string") {
-            // Try to parse JSON string
+            // Fallback: try to parse JSON string (for backward compatibility)
             try {
               analysisData = JSON.parse(data.analysis);
             } catch (parseError) {
