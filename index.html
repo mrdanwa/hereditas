@@ -466,7 +466,20 @@
             throw new Error(data.error || "Analysis failed");
           }
 
-          analysisText.innerHTML = data.analysis.replace(/\n/g, "<br>");
+          // Parse the JSON analysis response
+          let analysisData;
+          try {
+            analysisData = JSON.parse(data.analysis);
+          } catch (parseError) {
+            // If parsing fails, display raw text
+            analysisText.innerHTML = data.analysis.replace(/\n/g, "<br>");
+            results.classList.remove("hidden");
+            imagePreview.classList.add("hidden");
+            return;
+          }
+
+          // Display the structured JSON response
+          displayAnalysisResult(analysisData);
           results.classList.remove("hidden");
           imagePreview.classList.add("hidden");
         } catch (error) {
@@ -480,6 +493,65 @@
       function showError(message) {
         errorDiv.textContent = message;
         errorDiv.classList.remove("hidden");
+      }
+
+      function displayAnalysisResult(data) {
+        const html = `
+          <div class="analysis-header">
+            <h4 style="color: #d4af37; margin-bottom: 15px; font-size: 1.4rem;">
+              ${
+                data.artworkName !== "Unknown"
+                  ? data.artworkName
+                  : "Unidentified Heritage Object"
+              }
+            </h4>
+            <div class="analysis-meta" style="margin-bottom: 20px; padding: 15px; background: rgba(212, 175, 55, 0.1); border-radius: 10px;">
+              <p><strong>Location:</strong> ${data.location}</p>
+              <p><strong>Period:</strong> ${data.period}</p>
+              <p><strong>Recognition Status:</strong> 
+                <span style="color: ${
+                  data.isRecognized ? "#28a745" : "#dc3545"
+                }; font-weight: bold;">
+                  ${data.isRecognized ? "Recognized" : "Not Recognized"}
+                </span>
+              </p>
+            </div>
+          </div>
+          
+          <div class="key-takeaways" style="margin-bottom: 25px;">
+            <h5 style="color: #495057; margin-bottom: 15px; font-size: 1.2rem;">Key Takeaways</h5>
+            <ul style="list-style: none; padding: 0;">
+              ${data.detailedDescription.keyTakeaways
+                .map(
+                  (takeaway) =>
+                    `<li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                  <span style="position: absolute; left: 0; color: #d4af37; font-weight: bold;">•</span>
+                  ${takeaway}
+                </li>`
+                )
+                .join("")}
+            </ul>
+          </div>
+          
+          <div class="in-depth-context" style="margin-bottom: 25px;">
+            <h5 style="color: #495057; margin-bottom: 15px; font-size: 1.2rem;">Detailed Analysis</h5>
+            <div style="line-height: 1.7; text-align: justify;">
+              ${data.detailedDescription.inDepthContext.replace(
+                /\n\n/g,
+                '</p><p style="margin-bottom: 15px;">'
+              )}
+            </div>
+          </div>
+          
+          <div class="curiosities" style="padding: 15px; background: linear-gradient(145deg, #f8f9fa, #e9ecef); border-radius: 10px; border-left: 4px solid #d4af37;">
+            <h5 style="color: #495057; margin-bottom: 10px; font-size: 1.1rem;">Interesting Fact</h5>
+            <p style="margin: 0; font-style: italic;">${
+              data.detailedDescription.curiosities
+            }</p>
+          </div>
+        `;
+
+        analysisText.innerHTML = html;
       }
 
       function resetInterface() {
