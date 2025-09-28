@@ -467,30 +467,7 @@
           }
 
           // Handle the analysis response
-          let analysisData;
-
-          // Check if data.analysis is already an object or needs parsing
-          if (typeof data.analysis === "object" && data.analysis !== null) {
-            // Already parsed object from backend
-            analysisData = data.analysis;
-          } else if (typeof data.analysis === "string") {
-            // Fallback: try to parse JSON string (for backward compatibility)
-            try {
-              analysisData = JSON.parse(data.analysis);
-            } catch (parseError) {
-              // If parsing fails, display raw text
-              analysisText.innerHTML = data.analysis.replace(/\n/g, "<br>");
-              results.classList.remove("hidden");
-              imagePreview.classList.add("hidden");
-              return;
-            }
-          } else {
-            // Fallback for unexpected data types
-            analysisText.innerHTML = `<p>Unexpected response format: ${typeof data.analysis}</p>`;
-            results.classList.remove("hidden");
-            imagePreview.classList.add("hidden");
-            return;
-          }
+          const analysisData = data.analysis;
 
           // Display the structured JSON response
           displayAnalysisResult(analysisData);
