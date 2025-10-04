@@ -402,7 +402,7 @@
 
       // Supabase Edge Function endpoint
       const EDGE_FUNCTION_URL =
-        "https://ufcyulunatsjcrjbnwmp.supabase.co/functions/v1/analyze";
+        "https://ufcyulunatsjcrjbnwmp.supabase.co/functions/v1/monuments";
       const SUPABASE_ANON_KEY =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVmY3l1bHVuYXRzamNyamJud21wIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg4OTM5MzcsImV4cCI6MjA3NDQ2OTkzN30.6J9xiaNoKY1UBXtVIPZbrE_dpz4JKZdPDatlhyVNJUM";
 
@@ -491,8 +491,8 @@
           <div class="analysis-header">
             <h4 style="color: #d4af37; margin-bottom: 15px; font-size: 1.4rem;">
               ${
-                data.artworkName !== "Unknown"
-                  ? data.artworkName
+                data.name !== "Unknown"
+                  ? data.name
                   : "Unidentified Heritage Object"
               }
             </h4>
