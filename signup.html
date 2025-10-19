@@ -151,12 +151,14 @@
                     <input
                       type="text"
                       class="form-control"
-                      name="displayname"
-                      id="displayname"
-                      placeholder="Display Name"
+                      name="username"
+                      id="username"
+                      placeholder="Username"
+                      minlength="3"
+                      maxlength="15"
                       required
                     />
-                    <label for="displayname">Display Name</label>
+                    <label for="username">Username</label>
                   </div>
                   <div class="form-floating mb-3">
                     <input
@@ -179,6 +181,17 @@
                       required
                     />
                     <label for="password">Password</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input
+                      type="password"
+                      class="form-control"
+                      name="confirmPassword"
+                      id="confirmPassword"
+                      placeholder="Confirm Password"
+                      required
+                    />
+                    <label for="confirmPassword">Confirm Password</label>
                   </div>
                   <button type="submit" class="btn swap-icon" id="signup-btn">
                     Sign Up<i class="icon bi bi-arrow-right-short"></i>
@@ -272,9 +285,28 @@
           const originalText = signupBtn.innerHTML;
 
           // Get form data
-          const displayName = document.getElementById("displayname").value;
+          const username = document.getElementById("username").value;
           const email = document.getElementById("email").value;
           const password = document.getElementById("password").value;
+          const confirmPassword =
+            document.getElementById("confirmPassword").value;
+
+          // Validate username constraints
+          if (username.length < 3) {
+            alert("Username must be at least 3 characters long");
+            return;
+          }
+
+          if (username.length > 15) {
+            alert("Username must be no more than 15 characters");
+            return;
+          }
+
+          // Validate password matching
+          if (password !== confirmPassword) {
+            alert("Passwords do not match");
+            return;
+          }
 
           // Validate checkbox
           const checkbox = document.getElementById("exampleCheck1");
@@ -295,7 +327,7 @@
               password: password,
               options: {
                 data: {
-                  display_name: displayName,
+                  username: username,
                 },
               },
             });
@@ -319,7 +351,15 @@
             }
           } catch (error) {
             console.error("Signup error:", error);
-            alert("Error creating account: " + error.message);
+
+            // Check for duplicate username
+            if (error.message?.includes("Database error saving new user")) {
+              alert(
+                "Username Taken: This username is already taken. Please choose a different one."
+              );
+            } else {
+              alert("Error creating account: " + error.message);
+            }
           } finally {
             // Reset button state
             signupBtn.innerHTML = originalText;
