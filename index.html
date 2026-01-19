@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Snap into Heritage with Hereditas - AI-powered image recognition for landmarks and museum pieces."
+    />
+    <meta
+      name="keywords"
+      content="AI heritage recognition, landmark identification, museum pieces, cultural heritage, image recognition, art history, cultural exploration, heritage app, AI technology, landmarks, museums, art recognition"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Hereditas - Snap into Heritage</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="assets/img/favicon.png" />
+
+    <!-- ***** All CSS Files ***** -->
+
+    <!-- Style css -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <div class="main">
+      <!-- ***** Preloader Start ***** -->
+      <div class="preloader-main">
+        <div class="preloader-wapper">
+          <svg
+            class="preloader"
+            xmlns="http://www.w3.org/2000/svg"
+            version="1.1"
+            width="600"
+            height="200"
+          >
+            <defs>
+              <filter id="goo" x="-40%" y="-40%" height="200%" width="400%">
+                <feGaussianBlur
+                  in="SourceGraphic"
+                  stdDeviation="10"
+                  result="blur"
+                />
+                <feColorMatrix
+                  in="blur"
+                  mode="matrix"
+                  values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -8"
+                  result="goo"
+                />
+              </filter>
+            </defs>
+            <g filter="url(#goo)">
+              <circle class="dot" cx="50" cy="50" r="25" fill="#203d52" />
+              <circle class="dot" cx="50" cy="50" r="25" fill="#203d52" />
+            </g>
+          </svg>
+          <div>
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+          </div>
+        </div>
+      </div>
+      <!-- ***** Preloader End ***** -->
+
+      <!-- ***** Header Start ***** -->
+      <header id="header">
+        <!-- Navbar -->
+        <nav
+          data-aos="zoom-out"
+          data-aos-delay="800"
+          class="navbar gameon-navbar navbar-expand"
+        >
+          <div class="container header">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+              <img
+                src="assets/img/logo/logo.png"
+                alt="Brand Logo"
+                style="height: 35px"
+              />
+            </a>
+
+            <div class="ms-auto"></div>
+
+            <!-- Navbar Nav -->
+            <ul class="navbar-nav items mx-auto">
+              <li class="nav-item">
+                <a class="nav-link smooth-anchor" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link smooth-anchor" href="#features">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link smooth-anchor" href="#screenshots"
+                  >Screenshots</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link smooth-anchor" href="#pricing">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link smooth-anchor" href="#contact">Contact</a>
+              </li>
+            </ul>
+
+            <!-- Navbar Icons -->
+            <ul class="navbar-nav icons"></ul>
+
+            <!-- Navbar Toggler -->
+            <ul class="navbar-nav toggle">
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link"
+                  data-bs-toggle="modal"
+                  data-bs-target="#menu"
+                >
+                  <i class="icon-menu m-0"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- ***** Header End ***** -->
+
+      <!-- ***** Hero Section Start ***** -->
+      <section
+        id="home"
+        class="hero-section layout-1 has-overlay overlay-gradient"
+      >
+        <div class="container">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12 col-md-7 col-lg-6">
+              <!-- Hero Content -->
+              <div class="hero-content">
+                <h1 class="text-white">Snap into Heritage</h1>
+                <p class="sub-heading text-white my-4">
+                  Discover the living stories of art and monuments through
+                  AI-powered image recognition
+                </p>
+
+                <!-- Download Button -->
+                <div class="button-group download-button">
+                  <a href="coming-soon.html">
+                    <img src="assets/img/buttons/google-play.png" alt="" />
+                  </a>
+                  <a
+                    href="https://apps.apple.com/it/app/hereditas-scan-art-sites/id6755953218?l=en-GB"
+                    target="_blank"
+                  >
+                    <img src="assets/img/buttons/app-store.png" alt="" />
+                  </a>
+                </div>
+                <span class="d-block fst-italic fw-light text-white mt-3"
+                  >* Download Hereditas and start your cultural journey</span
+                >
+              </div>
+            </div>
+            <div class="col-12 col-md-5 col-lg-6">
+              <!-- Hero Thumb -->
+              <div
+                class="hero-thumb mx-auto d-none d-md-block"
+                data-aos="fade-left"
+                data-aos-delay="500"
+                data-aos-duration="1000"
+              >
+                <img
+                  src="assets/img/screens/1.webp"
+                  alt=""
+                  style="width: 350px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shape Bottom -->
+        <div class="shape-bottom">
+          <svg
+            viewBox="0 0 1920 310"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            class="svg replaced-svg"
+          >
+            <defs></defs>
+            <g
+              id="sApp-Landing-Page"
+              stroke="none"
+              stroke-width="1"
+              fill="none"
+              fill-rule="evenodd"
+            >
+              <g
+                id="sApp-v1.0"
+                transform="translate(0.000000, -554.000000)"
+                fill="#FFFFFF"
+              >
+                <path
+                  d="M-3,551 C186.257589,757.321118 319.044414,856.322454 395.360475,848.004007 C509.834566,835.526337 561.525143,796.329212 637.731734,765.961549 C713.938325,735.593886 816.980646,681.910577 1035.72208,733.065469 C1254.46351,784.220361 1511.54925,678.92359 1539.40808,662.398665 C1567.2669,645.87374 1660.9143,591.478574 1773.19378,597.641868 C1848.04677,601.75073 1901.75645,588.357675 1934.32284,557.462704 L1934.32284,863.183395 L-3,863.183395"
+                  id="sApp-v1.0"
+                ></path>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </section>
+      <!-- ***** Hero Section End ***** -->
+
+      <!-- ***** Counter Area Start ***** -->
+      <section class="counter-area">
+        <div class="container">
+          <div class="row items justify-content-center">
+            <div class="col-6 col-md-3 item">
+              <div class="counter-item text-center">
+                <span class="counter">98</span><span>%</span>
+                <h5 class="mt-1 mb-0">Accuracy</h5>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 item">
+              <div class="counter-item text-center">
+                <span class="counter">100</span><span>%</span>
+                <h5 class="mt-1 mb-0">Satisfaction</h5>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 item">
+              <div class="counter-item text-center">
+                <span class="counter">195</span>
+                <h5 class="mt-1 mb-0">Countries</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ***** Counter Area End ***** -->
+
+      <!-- ***** Features Area Start ***** -->
+      <section id="features" class="features-section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-7">
+              <!-- Intro -->
+              <div class="intro text-center mb-4">
+                <span class="badge rounded-pill text-bg-light">
+                  <i class="fa-regular fa-lightbulb"></i>
+                  <span>Innovative</span>
+                  <span>Features</span>
+                </span>
+                <h2 class="title">What Makes Hereditas Revolutionary?</h2>
+                <p>
+                  Discover the hidden stories of art and monuments through cutting-edge AI technology that transforms every visit into an educational adventure. Build your personal digital heritage collection while connecting with a community of heritage lovers. Follow other users to learn from their discoveries and visit the places your friends have explored.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row items">
+            <div class="col-12 col-md-6 col-lg-4 item">
+              <!-- Image Box -->
+              <div
+                class="image-box text-center wow fadeInLeft"
+                data-wow-delay="0.4s"
+              >
+                <i class="fa-solid fa-brain fa-3x icon-primary"></i>
+                <!-- Content -->
+                <div class="content">
+                  <h4 class="mb-3">AI Recognition</h4>
+                  <p class="mt-3">
+                    Advanced computer vision technology identifies landmarks and
+                    museum pieces, providing detailed historical context and
+                    cultural significance.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 item">
+              <!-- Image Box -->
+              <div
+                class="image-box text-center wow fadeInUp"
+                data-wow-delay="0.2s"
+              >
+                <i class="fa-solid fa-museum fa-3x icon-primary"></i>
+                <!-- Content -->
+                <div class="content">
+                  <h4 class="mb-3">Digital Collection</h4>
+                  <p class="mt-3">
+                    Build and organize your personal heritage collection with
+                    photos, detailed explanations, and visit history, creating a
+                    digital museum of your cultural journey.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 item">
+              <!-- Image Box -->
+              <div
+                class="image-box text-center wow fadeInRight"
+                data-wow-delay="0.4s"
+              >
+                <i class="fa-solid fa-users fa-3x icon-primary"></i>
+                <!-- Content -->
+                <div class="content">
+                  <h4 class="mb-3">Social Discovery</h4>
+                  <p class="mt-3">
+                    Follow other heritage lovers to learn from their discoveries. Visit the places your friends have explored and build a community of cultural enthusiasts.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ***** Features Area End ***** -->
+
+      <!-- ***** Content Section Start ***** -->
+      <section class="content-section primary-bg">
+        <div class="container">
+          <div class="row justify-content-between align-items-center">
+            <div class="col-12 col-lg-6">
+              <div class="content">
+                <h2 class="mt-0">
+                  Transform Every Visit Into A Learning Adventure
+                </h2>
+
+                <ul class="list-group list-group-flush">
+                  <li
+                    class="list-group-item d-flex align-items-center border-0"
+                  >
+                    <!-- Icon Box -->
+                    <div class="icon-box me-3">
+                      <div class="icon shadow-sm">
+                        <span class="material-symbols-outlined"
+                          >camera_alt</span
+                        >
+                      </div>
+                    </div>
+                    <span
+                      >Simply point your camera at any landmark or museum piece
+                      to instantly receive detailed historical context.</span
+                    >
+                  </li>
+
+                  <li
+                    class="list-group-item d-flex align-items-center border-0"
+                  >
+                    <!-- Icon Box -->
+                    <div class="icon-box me-3">
+                      <div class="icon shadow-sm">
+                        <span class="material-symbols-outlined"
+                          >collections_bookmark</span
+                        >
+                      </div>
+                    </div>
+                    <span
+                      >Automatically save your discoveries to build a
+                      comprehensive digital collection.</span
+                    >
+                  </li>
+
+                  <li
+                    class="list-group-item d-flex align-items-center border-0"
+                  >
+                    <!-- Icon Box -->
+                    <div class="icon-box me-3">
+                      <div class="icon shadow-sm">
+                        <span class="material-symbols-outlined">people</span>
+                      </div>
+                    </div>
+                    <span
+                      >Follow other users to learn from their discoveries and visit the places your friends have explored.</span
+                    >
+                  </li>
+
+                  <li
+                    class="list-group-item d-flex align-items-center border-0"
+                  >
+                    <!-- Icon Box -->
+                    <div class="icon-box me-3">
+                      <div class="icon shadow-sm">
+                        <span class="material-symbols-outlined">volume_up</span>
+                      </div>
+                    </div>
+                    <span
+                      >Listen to immersive audio guides with professional
+                      narration that brings the stories of landmarks and
+                      artifacts to life.</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-4 d-none d-lg-flex align-items-center justify-content-center">
+              <img src="assets/img/screens/2.webp" alt="" style="width: 350px" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ***** Content Section End ***** -->
+
+      <!-- ***** Content Section Start ***** -->
+      <section class="content-section">
+        <div class="container">
+          <div class="row justify-content-between align-items-center">
+            <div class="col-12 col-lg-6 d-none d-lg-flex align-items-center justify-content-center">
+              <img src="assets/img/screens/0.webp" alt="" style="width: 350px" />
+            </div>
+
+            <div class="col-12 col-lg-6">
+              <div class="content">
+                <h2 class="mt-0">
+                  Learn and Connect with Hereditas
+                </h2>
+
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex border-0 p-0">
+                    <div class="icon layout-2 align-items-start mt-1 me-2">
+                      <span class="material-symbols-outlined"
+                        >calendar_today</span
+                      >
+                    </div>
+                    <span
+                      >Discover a new heritage item every day with Daily
+                      Heritage, featuring immersive stories and audio
+                      guides.</span
+                    >
+                  </li>
+
+                  <li class="list-group-item d-flex border-0 p-0">
+                    <div class="icon layout-2 align-items-start mt-1 me-2">
+                      <span class="material-symbols-outlined">menu_book</span>
+                    </div>
+                    <span
+                      >Access comprehensive courses and articles covering
+                      various topics in art history, cultural heritage, and
+                      world landmarks.</span
+                    >
+                  </li>
+
+                  <li class="list-group-item d-flex border-0 p-0">
+                    <div class="icon layout-2 align-items-start mt-1 me-2">
+                      <span class="material-symbols-outlined">people</span>
+                    </div>
+                    <span
+                      >Follow other heritage lovers to learn from their discoveries and visit the places your friends have explored.</span
+                    >
+                  </li>
+
+                  <li class="list-group-item d-flex border-0 p-0">
+                    <div class="icon layout-2 align-items-start mt-1 me-2">
+                      <span class="material-symbols-outlined">explore</span>
+                    </div>
+                    <span
+                      >Build a community of cultural enthusiasts and discover new landmarks and museum pieces through your friends' experiences.</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ***** Content Section End ***** -->
+
+      <!-- ***** Work Area Start ***** -->
+      <section class="work-section has-overlay overlay-gradient">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-7">
+              <!-- Intro -->
+              <div class="intro text-center">
+                <h2 class="title text-white layout-2 mt-0">
+                  How Hereditas Works?
+                </h2>
+                <p class="text-white">
+                  Discover the simple yet powerful process of using Hereditas to
+                  transform your cultural visits into educational adventures.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row items">
+            <div class="col-12 col-md-4 item">
+              <div class="icon-box text-center px-3">
+                <i class="fa-solid fa-camera fa-3x text-white"></i>
+                <h4 class="text-white">Point & Capture</h4>
+                <p class="text-white">
+                  Simply point your camera at any landmark or museum piece and
+                  capture a photo. Our AI instantly recognizes what you're
+                  looking at.
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 item">
+              <div class="icon-box text-center px-3">
+                <i class="fa-solid fa-book-open fa-3x text-white"></i>
+                <h4 class="text-white">Learn & Discover</h4>
+                <p class="text-white">
+                  Receive detailed explanations about the landmark or piece's
+                  history, cultural significance, artistic style, and
+                  fascinating stories behind it.
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 item">
+              <div class="icon-box text-center px-3">
+                <i class="fa-solid fa-users fa-3x text-white"></i>
+                <h4 class="text-white">Share & Connect</h4>
+                <p class="text-white">
+                  Follow other heritage lovers to learn from their discoveries and visit the places your friends have explored.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ***** Work Area End ***** -->
+
+      <!-- ***** Screenshots Area Start ***** -->
+      <section id="screenshots" class="screenshots-area">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-7">
+              <!-- Intro -->
+              <div class="intro text-center">
+                <span class="badge rounded-pill text-bg-light">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i>
+                  <span>Awesome</span>
+                  <span>Interface</span>
+                </span>
+                <h2 class="title">Simple &amp; Beautiful Interface</h2>
+                <p>
+                  Clean and elegant interface with Hereditas that combines
+                  simplicity with beauty, ensuring a smooth and enjoyable user
+                  journey.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="app-screenshots-slides">
+            <div class="swiper-container slider-mid">
+              <div class="swiper-wrapper">
+                <!-- Single Slide -->
+                <div class="swiper-slide item">
+                  <img src="assets/img/screens/3.webp" alt="" />
+                </div>
+                <!-- Single Slide -->
+                <div class="swiper-slide item">
+                  <img src="assets/img/screens/4.webp" alt="" />
+                </div>
+                <!-- Single Slide -->
+                <div class="swiper-slide item">
+                  <img src="assets/img/screens/5.webp" alt="" />
+                </div>
+                <!-- Single Slide -->
+                <div class="swiper-slide item">
+                  <img src="assets/img/screens/6.webp" alt="" />
+                </div>
+                <!-- Single Slide -->
+                <div class="swiper-slide item">
+                  <img src="assets/img/screens/7.webp" alt="" />
+                </div>
+                <!-- Single Slide -->
+                <div class="swiper-slide item">
+                  <img src="assets/img/screens/8.webp" alt="" />
+                </div>
+                <div class="swiper-slide item">
+                  <img src="assets/img/screens/9.webp" alt="" />
+                </div>
+                <div class="swiper-slide item">
+                  <img src="assets/img/screens/10.webp" alt="" />
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ***** Screenshots Area End ***** -->
+
+      <!-- ***** Review Section Start ***** -->
+      <section id="review" class="review-section pt-0">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-7">
+              <!-- Intro -->
+              <div class="intro text-center mb-4">
+                <span class="badge rounded-pill text-bg-light">
+                  <i class="fa-regular fa-heart"></i>
+                  <span>User</span>
+                  <span>Reviews</span>
+                </span>
+                <h2 class="title">What our users are saying</h2>
+                <p>
+                  Hear from our community of heritage lovers who have transformed their
+                  cultural visits with Hereditas. Discover why they love
+                  exploring art and monuments, learning from friends, and building their collections with our AI-powered social platform.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row items align-items-center">
+            <div class="col-12 col-md-6 col-lg-4 item">
+              <!-- Reviews -->
+              <div class="reviews card">
+                <div class="content p-4">
+                  <!-- Review Icon -->
+                  <div class="review-icon">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                  </div>
+                  <h4 class="clip-text text-effect">
+                    Amazing Cultural Discovery Tool!
+                  </h4>
+                  <p>
+                    "Perfect for exploring European cities! The AI instantly
+                    recognizes landmarks and gives great historical context. My
+                    travel photos now tell stories."
+                  </p>
+                </div>
+
+                <!-- Review Meta -->
+                <div class="review-meta primary-bg d-flex p-3">
+                  <div class="reviewer ms-3">
+                    <h5 class="reviewer-name mt-0 mb-2">Juan Rodriguez</h5>
+                    <span>Travel & History Enthusiast</span>
+                  </div>
+                </div>
+
+                <!-- Quotation Icon -->
+                <div class="quot-icon">
+                  <img
+                    class="avatar-md"
+                    src="assets/img/images/quote.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 item">
+              <!-- Reviews -->
+              <div class="reviews card">
+                <div class="content p-4">
+                  <!-- Review Icon -->
+                  <div class="review-icon">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                  </div>
+                  <h4 class="clip-text text-effect">
+                    Great for Studying Abroad!
+                  </h4>
+                  <p>
+                    "Studying in Rome and this app is incredible! I can learn
+                    about every landmark I pass. Makes my Erasmus experience so
+                    much richer."
+                  </p>
+                </div>
+
+                <!-- Review Meta -->
+                <div class="review-meta primary-bg d-flex p-3">
+                  <div class="reviewer ms-3">
+                    <h5 class="reviewer-name mt-0 mb-2">Miguel Santos</h5>
+                    <span>Erasmus Student</span>
+                  </div>
+                </div>
+
+                <!-- Quotation Icon -->
+                <div class="quot-icon">
+                  <img
+                    class="avatar-md"
+                    src="assets/img/images/quote.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 item">
+              <!-- Reviews -->
+              <div class="reviews card">
+                <div class="content p-4">
+                  <!-- Review Icon -->
+                  <div class="review-icon">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                  </div>
+                  <h4 class="clip-text text-effect">
+                    Love the Social Features!
+                  </h4>
+                  <p>
+                    "Following other heritage lovers has opened up so many new places to explore! I discover amazing landmarks through my friends' discoveries."
+                  </p>
+                </div>
+
+                <!-- Review Meta -->
+                <div class="review-meta primary-bg d-flex p-3">
+                  <div class="reviewer ms-3">
+                    <h5 class="reviewer-name mt-0 mb-2">Tom Wilson</h5>
+                    <span>Frequent Traveller</span>
+                  </div>
+                </div>
+
+                <!-- Quotation Icon -->
+                <div class="quot-icon">
+                  <img
+                    class="avatar-md"
+                    src="assets/img/images/quote.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ***** Review Section End ***** -->
+
+      <!-- ***** Price Plan Area Start ***** -->
+      <section id="pricing" class="price-plan-area primary-bg">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-7">
+              <!-- Intro -->
+              <div class="intro text-center mb-4">
+                <h2 class="title mt-0">Choose Your Heritage Journey</h2>
+                <p>
+                  Select the perfect plan for your cultural exploration needs,
+                  from casual museum visits to comprehensive heritage research
+                  and collection building.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-lg-8">
+              <div class="row items">
+                <div class="col-12 col-lg-6 item">
+                  <!-- Pricing Table -->
+                  <div
+                    class="pricing-table text-center wow fadeInLeft"
+                    data-aos-duration="2s"
+                    data-wow-delay="0.4s"
+                  >
+                    <!-- Plan Icon -->
+
+                    <span class="package-type d-block">Basic</span>
+                    <h2 class="package-price clip-text text-effect my-3">
+                      Free
+                    </h2>
+
+                    <!-- Package List -->
+                    <ul class="package-list list-group list-group-flush">
+                      <li class="list-group-item">Basic AI Recognition</li>
+                      <li class="list-group-item">Up to 3 scans per day</li>
+                      <li class="list-group-item">Basic Explanations</li>
+                      <li class="list-group-item">Limited Learn Content</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 item">
+                  <!-- Pricing Table -->
+                  <div
+                    class="pricing-table text-center wow fadeInRight"
+                    data-aos-duration="2s"
+                    data-wow-delay="0.4s"
+                  >
+                    <!-- Plan Icon -->
+                    <span class="package-type d-block">Pro</span>
+                    <h2 class="package-price clip-text text-effect my-3">
+                      <small>€28.99/Year</small>
+                    </h2>
+
+                    <!-- Package List -->
+                    <ul class="package-list list-group list-group-flush">
+                      <li class="list-group-item">Immersive Explanations</li>
+                      <li class="list-group-item">Unlimited Scans</li>
+                      <li class="list-group-item">Audio Guides</li>
+                      <li class="list-group-item">Full Learn Section Access</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ***** Price Plan Area End ***** -->
+
+      <!-- ***** FAQ Area Start ***** -->
+      <section id="faq" class="faq">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-7">
+              <!-- Intro -->
+              <div class="intro text-center">
+                <h2 class="title mt-0">Frequently Asked Questions</h2>
+                <p>
+                  Find answers to the most common questions about Hereditas,
+                  covering everything from AI recognition to social features and collection
+                  management, to help you get the most out of your cultural
+                  exploration.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-10">
+              <!-- Hereditas Accordion -->
+              <div class="accordion accordion-flush" id="hereditas-accordion">
+                <!-- Accordion Item -->
+                <div class="accordion-item">
+                  <h4 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne"
+                    >
+                      How accurate is the AI recognition?
+                    </button>
+                  </h4>
+                  <div
+                    id="collapseOne"
+                    class="accordion-collapse collapse show"
+                    data-bs-parent="#hereditas-accordion"
+                  >
+                    <div class="accordion-body">
+                      Hereditas uses AI-powered image recognition to identify
+                      landmarks and museum pieces. The accuracy varies
+                      depending on the clarity of the photo, the angle, and how
+                      well-known the landmark or piece is. Well-known landmarks
+                      and famous museum pieces are typically recognized with
+                      good accuracy, while less common or obscure items may
+                      require clearer photos or additional context.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Accordion Item -->
+                <div class="accordion-item">
+                  <h4 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo"
+                    >
+                      How does the AI recognition work?
+                    </button>
+                  </h4>
+                  <div
+                    id="collapseTwo"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#hereditas-accordion"
+                  >
+                    <div class="accordion-body">
+                      Hereditas uses AI technology to analyze the photos you
+                      take. The system processes your image and uses its
+                      knowledge of cultural heritage, art history, and
+                      historical sites to identify what you're looking at and
+                      provide relevant information and context about the
+                      landmark or museum piece.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Accordion Item -->
+                <div class="accordion-item">
+                  <h4 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree"
+                    >
+                      What types of landmarks and pieces can Hereditas
+                      recognize?
+                    </button>
+                  </h4>
+                  <div
+                    id="collapseThree"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#hereditas-accordion"
+                  >
+                    <div class="accordion-body">
+                      Hereditas can help identify various types of cultural
+                      artifacts including historical landmarks, sculptures,
+                      paintings, archaeological objects, architectural
+                      landmarks, and museum pieces. The recognition works best
+                      with well-known landmarks and famous artworks, though it
+                      may also identify less common items depending on photo
+                      quality and available context.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Accordion Item -->
+                <div class="accordion-item">
+                  <h4 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseFour"
+                    >
+                      How do I organize my heritage collection?
+                    </button>
+                  </h4>
+                  <div
+                    id="collapseFour"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#hereditas-accordion"
+                  >
+                    <div class="accordion-body">
+                      Your heritage collection is automatically organized by
+                      type (landmarks and museum pieces) and by country. You
+                      can easily browse your discoveries filtered by landmarks,
+                      museums, or grouped by country.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Accordion Item -->
+                <div class="accordion-item">
+                  <h4 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseFive"
+                    >
+                      Is Hereditas suitable for educational use?
+                    </button>
+                  </h4>
+                  <div
+                    id="collapseFive"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#hereditas-accordion"
+                  >
+                    <div class="accordion-body">
+                      Absolutely! Hereditas is perfect for educational use.
+                      Teachers can use it for field trips, students can build
+                      research collections, and families can make museum visits
+                      more engaging. The app provides age-appropriate
+                      explanations and helps develop cultural awareness and
+                      historical knowledge.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Accordion Item -->
+                <div class="accordion-item">
+                  <h4 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseSix"
+                    >
+                      How do the social features work?
+                    </button>
+                  </h4>
+                  <div
+                    id="collapseSix"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#hereditas-accordion"
+                  >
+                    <div class="accordion-body">
+                      Hereditas is a social platform for heritage lovers. You can follow other users to see their public discoveries and learn from their cultural explorations. When you follow someone, you can view their scans and visit the places they've explored. You can set your account to public (all users can see your discoveries) or private (only approved followers can see your content). This helps you discover new landmarks and museum pieces through your friends' experiences and build a community of cultural enthusiasts.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ***** FAQ Area End ***** -->
+
+      <!-- ***** Team Area Start ***** -->
+      <section class="team-area border-top">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-7">
+              <!-- Intro -->
+              <div class="intro text-center">
+                <h2 class="title mt-0">Meet the Hereditas Team</h2>
+                <p>
+                  Our passionate founders combine expertise in AI technology,
+                  cultural heritage, and user experience to create the future of
+                  cultural exploration and education.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row items">
+            <div class="col-12 col-md-6 item">
+              <!-- Single Team -->
+              <div class="card team-item layout-2 scale">
+                <div class="image-holder">
+                  <!-- Card Thumb -->
+                  <div class="card-thumb">
+                    <img src="assets/img/images/lorenzo.jpeg" alt="" />
+                  </div>
+
+                  <!-- Card Overlay -->
+                  <div class="card-overlay has-overlay overlay-gradient">
+                    <div class="heading text-center">
+                      <h4 class="title team-name mt-0 mb-2">
+                        Lorenzo Cappelletti
+                      </h4>
+                      <span class="team-position">Co-Founder &amp; CEO</span>
+
+                      <!-- Social Icons -->
+                      <div
+                        class="social-icons d-flex justify-content-center mt-3"
+                      >
+                        <a
+                          class="icon"
+                          href="https://www.linkedin.com/in/lorenzo-cappelletti-995b59253"
+                          target="_blank"
+                        >
+                          <i class="fa-brands fa-linkedin-in"></i>
+                          <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 item">
+              <!-- Single Team -->
+              <div class="card team-item layout-2 scale">
+                <div class="image-holder">
+                  <!-- Card Thumb -->
+                  <div class="card-thumb">
+                    <img src="assets/img/images/dan.jpg" alt="" />
+                  </div>
+
+                  <!-- Card Overlay -->
+                  <div class="card-overlay has-overlay overlay-gradient">
+                    <div class="heading text-center">
+                      <h4 class="title team-name mt-0 mb-2">Danrui Wang</h4>
+                      <span class="team-position">Co-Founder &amp; CTO</span>
+
+                      <!-- Social Icons -->
+                      <div
+                        class="social-icons d-flex justify-content-center mt-3"
+                      >
+                        <a
+                          class="icon"
+                          href="https://www.linkedin.com/in/danrui-wang"
+                          target="_blank"
+                        >
+                          <i class="fa-brands fa-linkedin-in"></i>
+                          <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ***** Team Area End ***** -->
+
+      <!-- ***** Download Area Start ***** -->
+      <section class="download-area has-overlay overlay-dark">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-9">
+              <!-- Content -->
+              <div class="content text-center">
+                <h2 class="text-white">Download Hereditas Now</h2>
+                <p class="text-white">
+                  Experience the power of AI-driven cultural exploration on any
+                  device. Whether you're visiting museums on your smartphone or
+                  researching heritage sites on your tablet, Hereditas
+                  transforms every cultural encounter into a learning adventure.
+                </p>
+
+                <!-- Download Button -->
+                <div
+                  class="button-group download-button justify-content-center"
+                >
+                  <a href="coming-soon.html">
+                    <img src="assets/img/buttons/google-play.png" alt="" />
+                  </a>
+                  <a
+                    href="https://apps.apple.com/it/app/hereditas-scan-art-sites/id6755953218?l=en-GB"
+                    target="_blank"
+                  >
+                    <img src="assets/img/buttons/app-store.png" alt="" />
+                  </a>
+                </div>
+                <span class="d-block fst-italic fw-light text-white mt-3"
+                  >* Download Hereditas and discover heritage everywhere</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ***** Download Area End ***** -->
+
+      <!--====== Contact Area Start ======-->
+      <section id="contact" class="contact-area primary-bg">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-7">
+              <!-- Intro -->
+
+              <div class="intro text-center">
+                <h2 class="title mt-0">Follow Us on Social Media</h2>
+                <p>
+                  Stay connected with the latest updates, cultural discoveries,
+                  and heritage insights. Join our community of cultural
+                  explorers and be the first to know about new features and AI
+                  improvements.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-10">
+              <div class="contact-info">
+                <div class="row">
+                  <div class="col-12 col-md-6 text-center">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item text-center">
+                        <!-- Icon Box -->
+                        <div class="icon-box d-inline-block me-3">
+                          <div class="icon">
+                            <i class="fa-brands fa-instagram"></i>
+                          </div>
+                        </div>
+                        <span
+                          ><a
+                            href="https://instagram.com/hereditas_app"
+                            target="_blank"
+                            >@hereditas_app</a
+                          ></span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-12 col-md-6 text-center">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item text-center">
+                        <!-- Icon Box -->
+                        <div class="icon-box d-inline-block me-3">
+                          <div class="icon">
+                            <i class="fa-brands fa-tiktok"></i>
+                          </div>
+                        </div>
+                        <span
+                          ><a
+                            href="https://tiktok.com/@hereditas_app"
+                            target="_blank"
+                            >@hereditas_app</a
+                          ></span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--====== Contact Area End ======-->
+
+      <!--====== Mail Section Start ======-->
+      <section class="mail-section has-overlay overlay-gradient">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8">
+              <div class="mail-info text-center">
+                <div class="mb-4">
+                  <div class="mail-icon-box mx-auto mb-3">
+                    <i class="fa-solid fa-envelope fa-2x text-white"></i>
+                  </div>
+                </div>
+                <h2 class="text-white mb-3">Get in Touch</h2>
+                <p class="text-white mb-4 mail-description">
+                  Ready to transform your cultural visits? We'd love to hear
+                  from you and help you discover the power of AI-driven heritage
+                  exploration.
+                </p>
+                <div class="mail-link">
+                  <a
+                    href="mailto:info@hereditas.dev"
+                    class="btn btn-outline-light btn-lg px-4 py-3 mail-button"
+                  >
+                    <i class="fa-solid fa-envelope me-2"></i>
+                    info@hereditas.dev
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--====== Mail Section End ======-->
+
+      <!--====== Height Emulator Area Start ======-->
+      <div class="height-emulator d-none d-lg-block"></div>
+      <!--====== Height Emulator Area End ======-->
+
+      <!--====== Footer Area Start ======-->
+      <footer class="footer-area footer-fixed p-0">
+        <!-- Footer Top -->
+        <div class="footer-top">
+          <div class="container">
+            <div class="row items">
+              <div class="col-12 col-sm-6 col-lg-3 item">
+                <!-- Footer Items -->
+                <div class="footer-items">
+                  <!-- Logo -->
+                  <a class="navbar-brand" href="index.html">
+                    <img
+                      class="logo"
+                      src="assets/img/logo/logo.png"
+                      alt=""
+                      style="height: 30px"
+                    />
+                  </a>
+                  <p class="slug mt-3">
+                    Discover the living stories of art and monuments through
+                    AI-powered image recognition.
+                  </p>
+
+                  <hr />
+
+                  <!-- Social Icons -->
+                  <div class="social-icons d-flex mt-3">
+                    <a
+                      class="icon has-overlay overlay-gradient"
+                      href="https://instagram.com/hereditas_app"
+                      target="_blank"
+                    >
+                      <i class="fa-brands fa-instagram"></i>
+                      <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a
+                      class="icon has-overlay overlay-gradient"
+                      href="https://tiktok.com/@hereditas_app"
+                      target="_blank"
+                    >
+                      <i class="fa-brands fa-tiktok"></i>
+                      <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3 item">
+                <!-- Footer Items -->
+                <div class="footer-items">
+                  <h4 class="footer-title mt-0">Explore</h4>
+
+                  <!-- Navigation -->
+                  <ul class="nav flex-column">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#screenshots">Screenshots</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#pricing">Pricing</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3 item">
+                <!-- Footer Items -->
+                <div class="footer-items">
+                  <h4 class="footer-title mt-0">Support</h4>
+
+                  <!-- Navigation -->
+                  <ul class="nav flex-column">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="privacy.html">Privacy Policy</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="terms.html"
+                        >Terms &amp; Conditions</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3 item">
+                <!-- Footer Items -->
+                <div class="footer-items">
+                  <h4 class="footer-title mt-0">Get the App</h4>
+
+                  <!-- Download Button -->
+                  <div class="button-group download-button">
+                    <a href="coming-soon.html">
+                      <img
+                        src="assets/img/buttons/google-play-black.png"
+                        alt=""
+                      />
+                    </a>
+                    <a
+                      href="https://apps.apple.com/it/app/hereditas-scan-art-sites/id6755953218?l=en-GB"
+                      target="_blank"
+                    >
+                      <img
+                        src="assets/img/buttons/app-store-black.png"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <!-- Copyright Area -->
+                <div
+                  class="copyright-area d-flex flex-wrap justify-content-center justify-content-sm-between align-items-center text-center py-4"
+                >
+                  <span>&copy; 2025 Hereditas | All rights reserved.</span>
+                  <span
+                    >Made with <i class="fa-solid fa-heart"></i> by the
+                    Hereditas team</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!--====== Footer Area End ======-->
+
+      <!--====== Modal Responsive Menu Area Start ======-->
+      <div id="menu" class="modal fade p-0">
+        <div class="modal-dialog modal-dialog-slideout">
+          <div class="modal-content full">
+            <div class="modal-header" data-bs-dismiss="modal">
+              Menu <i class="icon-close"></i>
+            </div>
+            <div class="menu modal-body">
+              <div class="row w-100">
+                <div class="items p-0 col-12 text-center">
+                  <!-- Append [navbar] -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--====== Modal Responsive Menu Area End ======-->
+
+      <!--====== Scroll To Top Area Start ======-->
+      <div id="scroll-to-top" class="scroll-to-top">
+        <a href="#home" class="smooth-anchor">
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+      <!--====== Scroll To Top Area End ======-->
+    </div>
+
+    <!-- ***** All jQuery Plugins ***** -->
+
+    <!-- jQuery(necessary for all JavaScript plugins) -->
+    <script src="assets/js/vendor/jquery.min.js"></script>
+
+    <!-- Bootstrap js -->
+    <script src="assets/js/vendor/popper.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+
+    <!-- Plugins js -->
+    <script src="assets/js/vendor/slider.min.js"></script>
+    <script src="assets/js/vendor/owl.carousel.min.js"></script>
+    <script src="assets/js/vendor/counterup.js"></script>
+    <script src="assets/js/vendor/waypoint.js"></script>
+    <script src="assets/js/vendor/aos.js"></script>
+    <script src="assets/js/vendor/wow.min.js"></script>
+    <script src="assets/js/vendor/gallery.min.js"></script>
+
+    <!-- Main js -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
